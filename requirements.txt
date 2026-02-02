@@ -1,0 +1,7 @@
+streamlit
+spacy
+nltk
+langdetect
+pypdf
+python-docx
+reportlab
