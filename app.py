@@ -304,13 +304,14 @@ if uploaded_file:
 
 
     # ---------- PDF Export ----------
+   st.markdown('<div class="card">', unsafe_allow_html=True)
     summary_text = build_summary(st.session_state["analysis_result"])
-pdf_file = generate_pdf(summary_text)
+    pdf_file = generate_pdf(summary_text)
 
-st.download_button(
-    label="📄 Download Legal Summary (PDF)",
-    data=pdf_file,
-    file_name="legal_summary.pdf",
-    mime="application/pdf"
+    st.download_button(
+       label="📄 Download Legal Summary (PDF)",
+       data=pdf_file,
+       file_name="legal_summary.pdf",
+       mime="application/pdf"
 )
 
