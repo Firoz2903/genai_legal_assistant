@@ -304,7 +304,7 @@ if uploaded_file:
 
 
     # ---------- PDF Export ----------
-   st.markdown('<div class="card">', unsafe_allow_html=True)
+    st.markdown('<div class="card">', unsafe_allow_html=True)
     summary_text = build_summary(st.session_state["analysis_result"])
     pdf_file = generate_pdf(summary_text)
 
