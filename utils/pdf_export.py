@@ -1,25 +1,26 @@
 from reportlab.lib.pagesizes import A4
 from reportlab.pdfgen import canvas
 
-def generate_pdf(summary_text, output_path="contract_summary.pdf"):
-    c = canvas.Canvas(output_path, pagesize=A4)
-    width, height = A4
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+from reportlab.lib.styles import getSampleStyleSheet
+import io
 
-    x = 40
-    y = height - 40
+def generate_pdf(text):
+    buffer = io.BytesIO()
 
-    c.setFont("Helvetica", 10)
+    doc = SimpleDocTemplate(buffer)
+    styles = getSampleStyleSheet()
+    elements = []
 
-    for line in summary_text.split("\n"):
-        if y < 40:
-            c.showPage()
-            c.setFont("Helvetica", 10)
-            y = height - 40
-        c.drawString(x, y, line)
-        y -= 14
+    for line in text.split("\n"):
+        elements.append(Paragraph(line, styles["Normal"]))
+        elements.append(Spacer(1, 8))
 
-    c.save()
-    return output_path
+    doc.build(elements)
+
+    buffer.seek(0)
+    return buffer
+
 
 def build_summary(analysis):
     lines = []
