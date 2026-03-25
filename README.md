@@ -5,11 +5,6 @@
 
 👉 https://genailegalassistant-sarsbgvmww56w6qracyj2r.streamlit.app/
 
-🎥 Demo Video
-
-👉 https://drive.google.com/file/d/1mHqZLerAQS0tTU2A8rplsziHdnnzlidO/view?usp=sharing
-
-
 🚀 Problem
 
 SMEs often sign legal contracts without fully understanding hidden risks such as penalties, indemnities, auto-renewals, or unfair clauses.
